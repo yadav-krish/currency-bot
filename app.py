@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def index():
     data = request.get_json()
-    print("DEBUG PAYLOAD:", data)  # For checking Dialogflow request in Render logs
+    print("DEBUG PAYLOAD:", data,flush=True)  # For checking Dialogflow request in Render logs
 
     # Safely extract parameters from Dialogflow
     unit = data['queryResult']['parameters'].get('unit-currency3')
